@@ -33,10 +33,16 @@ textEll.addEventListener("mouseover", function (e) {
 });
 // 5. Необходимо повесить событие клика на тег ul. В обработчике события в консоль необходимо выводить текст, который записан внутри элемента кнопки, по которой был произведен клик. Если клик был не по кнопке, то ничего выводить не нужно. Необходимо использовать делегирование.
 const listElls = document.querySelector("ul");
-listElls.addEventListener('click', function (e) {
-    let linkEll = e.target;
-    console.log(linkEll.textContent);
+listElls.addEventListener("click", function (e) {
+  let linkEll = e.target;
+  console.log(linkEll.textContent);
 });
 // 6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul? Ответ необходимо написать здесь же, под этим комментарием, своими словами.
 //Скорее всего из за фаз, в 5 задании фаза всплытия в 3 задании фаза захвата.
 // 7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
+const linkElls = document.querySelectorAll("li");
+linkElls.forEach((element, index) => {
+  if (index % 2 !== 0) {
+    element.style = "background-color: green";
+  }
+});
